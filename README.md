@@ -95,42 +95,6 @@ NanoRelayTimer/
 
 ---
 
-## 💻 Arduino Code
-
-```cpp
-#define BUTTON_PIN 2
-#define RELAY_PIN 8
-
-const unsigned long relayTime = 5000;
-
-bool relayActive = false;
-unsigned long startTime = 0;
-
-void setup() {
-  pinMode(BUTTON_PIN, INPUT_PULLUP);
-  pinMode(RELAY_PIN, OUTPUT);
-
-  digitalWrite(RELAY_PIN, LOW);
-}
-
-void loop() {
-
-  if (digitalRead(BUTTON_PIN) == LOW && !relayActive) {
-    relayActive = true;
-    startTime = millis();
-
-    digitalWrite(RELAY_PIN, HIGH);
-  }
-
-  if (relayActive && millis() - startTime >= relayTime) {
-    digitalWrite(RELAY_PIN, LOW);
-    relayActive = false;
-  }
-}
-```
-
----
-
 ## 🚀 Applications
 
 - Water Pump Timer
