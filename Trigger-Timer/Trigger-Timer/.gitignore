@@ -1,0 +1,18 @@
+# Arduino
+*.tmp
+*.bak
+
+# Build Files
+build/
+*.o
+*.elf
+*.hex
+
+# VS Code
+.vscode/
+
+# Linux
+*~
+
+# Logs
+*.log
